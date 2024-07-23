@@ -1,0 +1,177 @@
+@use "../styles/" as *;
+
+.taskItem {
+  @include standartBlock($align: flex-start);
+  background: rgba($color: #a59898, $alpha: 0.3);
+  border-radius: 0.4rem;
+  z-index: 50;
+
+  &__mainSection {
+    @include standartBlock($direction: row, $align: flex-start);
+    // z-index: 15;
+
+    &__dragBucket {
+      @include standartBlock();
+      position: absolute;
+      top: 0;
+      left: 0%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      background: $winColor;
+      color: black;
+      opacity: 0;
+      z-index: 0;
+    }
+
+    &__dragBucketVisible {
+      opacity: 1;
+      z-index: 15;
+    }
+
+    &__order {
+      @include standartBlock($width: auto);
+      // position: absolute;
+      // left: 0;
+      gap: 0.3rem;
+      z-index: 15;
+
+      button {
+        width: 0.9rem;
+        height: 0.9rem;
+        padding: 0;
+        line-height: 1;
+        border-radius: 50%;
+        color: $winColor;
+        cursor: pointer;
+
+        &:nth-child(1):hover {
+          background: $fontShadowColor;
+          color: $fontShadowColor;
+        }
+
+        &:nth-child(2):hover {
+          background: red;
+          color: red;
+        }
+      }
+    }
+
+    &__text {
+      width: 88%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      font-weight: 400;
+      opacity: 1;
+      z-index: 20;
+    }
+
+    &__textHidden {
+      opacity: 0;
+    }
+
+    textarea {
+      width: 82%;
+      font-size: 1rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+      font-weight: 400;
+      padding: 0 0.5rem;
+      border: none;
+      border-radius: 0.3rem;
+
+      &:focus-visible {
+        outline: 1px solid $winColor;
+      }
+    }
+
+    &__btnsBlock {
+      @include standartBlock($width: auto, $direction: row);
+      gap: 0.5rem;
+
+      button {
+        width: 1.5rem;
+        cursor: pointer;
+
+        &:first-child {
+          border-top-left-radius: 0.5rem;
+          border-bottom-left-radius: 0.5rem;
+
+          &:hover {
+            &:not(:disabled) {
+              background: red;
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          border-top-right-radius: 0.5rem;
+          border-bottom-right-radius: 0.5rem;
+
+          &:hover {
+            &:not(:disabled) {
+              background: $fontShadowColor;
+            }
+          }
+        }
+      }
+    }
+
+    &__btnsUpdateBlock {
+      @include standartBlock($width: auto, $direction: row);
+      gap: 0.5rem;
+
+      button {
+        width: auto;
+        cursor: pointer;
+
+        &:first-child {
+          border-top-left-radius: 0.5rem;
+          border-bottom-left-radius: 0.5rem;
+          background: red;
+        }
+
+        &:nth-child(2) {
+          border-top-right-radius: 0.5rem;
+          border-bottom-right-radius: 0.5rem;
+          background: $fontShadowColor;
+        }
+      }
+    }
+  }
+
+  &__addSection {
+    @include standartBlock($direction: row);
+
+    textarea {
+      width: 84%;
+      font-size: 1rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+      font-weight: 400;
+      border-radius: 0.3rem;
+
+      &:focus-visible {
+        outline: 1px solid $winColor;
+      }
+    }
+
+    button {
+      width: auto;
+
+      &:nth-child(2) {
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        background: red;
+      }
+
+      &:nth-child(3) {
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        background: $fontShadowColor;
+      }
+    }
+  }
+}

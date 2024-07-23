@@ -1,0 +1,45 @@
+@use "../styles/" as *;
+
+.register {
+  @include standartBlock($justify: center);
+  padding: 4rem 0 0 0;
+  gap: 3rem;
+
+  &__form {
+    @include standartBlock($width: 40%);
+    gap: 2rem;
+
+    &__label {
+      width: 100%;
+
+      &__title {
+        font-size: 1.29rem;
+      }
+
+      input {
+        @include standartBlock();
+        padding: 0.5rem;
+        font-size: 1rem;
+        border-radius: 0.2rem;
+        border: none;
+
+        &:focus-visible {
+          outline: 1px solid $winColor;
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+      border-radius: 0.2rem;
+    }
+  }
+
+  &__bottomText {
+    font-size: 1rem;
+
+    a {
+      color: $winColor;
+    }
+  }
+}
